@@ -1,9 +1,7 @@
-<p>
-  <input type="text" id="username" name="username" [(ngModel)]="username" />
-</p>
-
-<p>
-  <input type="password" id="password" name="password" [(ngModel)]="password" />
-</p>
-
-<input type="submit" value="Login" (click)="login()" />
+<div class="container" style="padding: 0px">
+  <app-header></app-header>
+  <app-nav></app-nav>
+  <router-outlet></router-outlet>
+  <app-aside></app-aside>
+  <app-footer></app-footer>
+</div>

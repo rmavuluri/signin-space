@@ -1,1 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
+body,
+html {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: auto 30% 30% 30%;
+    grid-template-rows: 8% 30% auto 10%;
+    grid-template-areas:
+        'sidebar header header header'
+        'sidebar section1 section2 section3'
+        'sidebar main main main'
+        'sidebar footer footer footer';
+}
+
+app-aside {
+    grid-area: sidebar;
+    background-color: #007fff;
+}
+
+app-header {
+    grid-area: header;
+    background-color: #91c8ff;
+}
+
+// section:nth-of-type(1) {
+//     grid-area: section1;
+//     background-color: #b3d8fd;
+// }
+
+// section:nth-of-type(2) {
+//     grid-area: section2;
+//     background-color: #5e86af;
+// }
+
+// section:nth-of-type(3) {
+//     grid-area: section3;
+//     background-color: #6d9fd2;
+// }
+
+app-main {
+    grid-area: main;
+    background-color: #7da9d5;
+}
+
+app-footer {
+    grid-area: footer;
+    background-color: #588ec3;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(auto, 5);
+        grid-template-areas:
+            'header'
+            'main'
+            'footer';
+    }
+}
